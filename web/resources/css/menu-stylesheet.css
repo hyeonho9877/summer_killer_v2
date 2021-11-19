@@ -9,13 +9,12 @@
 }
 
 
-
 .hide {
     display: none;
     padding: 10px;
     margin: 0 auto;
     width: 95%;
-    height: 15%;
+    height: 50%;
     text-align: center;
     font-size: 1.5em;
     font-weight: 700;
@@ -39,12 +38,10 @@
 .main-wrapper {
     width: 95%;
     max-width: 1600px;
-    margin: 0 auto;
     position: relative;
-    margin-bottom: 10px;
+    margin: 0 auto;
     height: fit-content;
 }
-
 
 .description {
     height: 30%;
@@ -67,7 +64,6 @@ h1 > a {
 }
 
 
-
 .menu-icon {
     display: none;
 }
@@ -77,15 +73,6 @@ h1 > a {
     text-align: center;
     margin: 15px auto;
     font-size: 3.125em;
-}
-
-.sign-in-container {
-    background-color: #8D491B;
-    padding: 5px;
-    border-radius: 10px;
-    margin: 0 auto;
-    width: 10%;
-    display: inline-block;
 }
 
 .button-sign-in {
@@ -98,6 +85,22 @@ h1 > a {
 }
 
 .button-sign-in:hover {
+    background-color: white;
+    color: sienna;
+}
+
+.button-my-page {
+    border-radius: 10px;
+    padding:8px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.button-my-page:hover {
+    cursor: pointer;
     background-color: white;
     color: sienna;
 }
@@ -127,6 +130,13 @@ nav > a {
     right: 60px;
 }
 
+nav .button-my-page {
+    user-select: none;
+    display: inline-block;
+    position: absolute;
+    right: 60px;
+}
+
 .nav-title {
     font-weight: bold;
     display: inline-block;
@@ -147,7 +157,8 @@ nav > a {
 .navigator a {
     color: white;
 }
-.navigator li {
+
+.navigator .ul-1 li{
     padding: 0 50px;
     display: inline-block;
     color: white;
@@ -155,7 +166,18 @@ nav > a {
     list-style-type: none;
 }
 
-.navigator li:not(:last-child) {
+.navigator .ul-2 li{
+    padding: 0 50px;
+    display: inline-block;
+    color: white;
+    font-size: 1.6em;
+    list-style-type: none;
+}
+.navigator .ul-1 li:not(:last-child){
+    border-right: 4px solid white;
+}
+
+.navigator .ul-2 li:not(:last-child){
     border-right: 4px solid white;
 }
 
@@ -188,4 +210,29 @@ h1 {
     position: absolute;
     top: 25px;
     right: 320px;
+}
+
+.sub_menu {
+    display: none;
+    position: absolute;
+    right: 60px;
+    top: 80px;
+    background-color: sienna;
+    border-radius: 10px;
+    padding:10px;
+}
+
+.sub_menu a{
+    padding: 10px;
+    color: white;
+    font-size: 1.0em;
+}
+
+.sub_menu li{
+    list-style: none;
+    display: block;
+}
+
+.sub_menu li:not(:last-child){
+    border-bottom: 3px solid white;
 }

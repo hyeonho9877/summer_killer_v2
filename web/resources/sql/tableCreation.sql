@@ -1,13 +1,12 @@
 create table if not exists user
 (
-    uid          int         not null auto_increment,
     username     varchar(10) not null,
     password     varchar(20) not null,
     address      varchar(30) not null,
     phone_number varchar(13) not null,
     gender       set ('M','F'),
     mileage      int default 0,
-    primary key (uid)
+    primary key (username)
 ) default charset = utf8;
 
 create table if not exists product
@@ -23,21 +22,21 @@ create table if not exists product
 create table if not exists article
 (
     aid    int         not null auto_increment,
-    writer int         not null,
+    writer varchar(10) not null,
     title  varchar(20) not null,
     text   text        not null,
     primary key (aid),
-    foreign key (writer) references user (uid)
+    foreign key (writer) references user (username)
 ) default charset = utf8;
 
 create table if not exists review
 (
     rid     int         not null auto_increment,
-    writer  int         not null,
+    writer  varchar(10)         not null,
     product int         not null,
     title   varchar(20) not null,
     text    varchar(50) not null,
     primary key (rid),
-    foreign key (writer) references user (uid),
+    foreign key (writer) references user (username),
     foreign key (product) references product (pid)
 ) default charset = utf8;

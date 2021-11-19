@@ -19,5 +19,4 @@
             out.print("</select>");
         %>
     </div>
-
 </footer>

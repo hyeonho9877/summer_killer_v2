@@ -110,7 +110,9 @@
 }
 
 .brothers {
-    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes textAppear {
@@ -170,7 +172,7 @@ p {
     max-width: 1200px;
 }
 
-.hidden-language{
+.hidden-language {
     display: none;
 }
 
@@ -192,7 +194,7 @@ p {
     }
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1750px) {
     .navigator {
         display: none;
     }
@@ -236,14 +238,14 @@ p {
         display: unset;
     }
 
-    .hidden-language{
+    .hidden-language {
         display: block;
         text-align: center;
         margin-bottom: 20px;
     }
 
-    .hidden-language > a{
-        color : black;
+    .hidden-language > a {
+        color: black;
         text-decoration: none;
     }
 

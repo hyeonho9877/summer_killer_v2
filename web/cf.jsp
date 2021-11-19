@@ -1,15 +1,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="menu.jsp" %>
-<html lang="ko">
-<head>
 <fmt:setLocale value='<%=language%>'/>
 <fmt:bundle basename="bundle.cfBundle">
-    <meta charset="UTF-8">
-    <meta name="viewport" item="width=device-width, initial-scale=1.0">
-    <title><fmt:message key="cf_title"/></title>
-    <link rel="stylesheet" href="resources/css/cf-stylesheet.css?after">
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <script src="resources/js/script.js"></script>
+    <html>
+    <head>
+        <title><fmt:message key="cf_title"/></title>
+        <link rel="stylesheet" href="resources/css/cf-stylesheet.css?after">
+        <script src="resources/js/script.js"></script>
     </head>
     <body>
     <div class="article">

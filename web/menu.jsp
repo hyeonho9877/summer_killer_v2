@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<head>
 <%
     String language = request.getParameter("language");
     if (language == null) {
@@ -9,12 +8,14 @@
 %>
 <fmt:setLocale value='<%=language%>'/>
 <fmt:bundle basename="bundle.menuBundle">
-    <link href="resources/css/menu-stylesheet.css" rel="stylesheet">
-    <script src="resources/js/jquery-3.5.1.min.js"></script>
-    <script src="resources/js/menu.js"></script>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <link href="resources/css/menu-stylesheet.css" rel="stylesheet">
+        <script src="resources/js/jquery-3.5.1.min.js"></script>
+        <script src="resources/js/menu.js"></script>
+        <script src="resources/js/mypage.js"></script>
     </head>
     <div class='hidden-menu'>
-
         <a class="open"><img class='menu-icon' src="resources/css/menu-icon.png"></a>
         <ul class="hide">
             <li><a href="introduction.jsp?language=<%=language%>"><span><fmt:message key="index"/></span> <fmt:message
@@ -38,23 +39,41 @@
                 <p class="nav-title"><a href="index.jsp?language=<%=language%>"><fmt:message
                         key="index"/></a></p>
                 <ul class="ul-2">
-                    <li><a href="gallery.jsp?language=<%=language%>"><fmt:message key="gallery"/></a></li>
                     <li><a href="shopping.jsp?language=<%=language%>"><fmt:message key="shopping"/></a></li>
+                    <li><a href="gallery.jsp?language=<%=language%>"><fmt:message key="gallery"/></a></li>
                     <li><a href="postBoard.jsp?language=<%=language%>"><fmt:message key="postBoard"/></a></li>
                 </ul>
+                <%
+                    Boolean authorized = (Boolean) session.getAttribute("authorized");
+                    if (authorized != null) {
+                %>
+                <span class="button-my-page" onclick><%=session.getAttribute("username")%> &#9660;</span>
+                <ul class="trd_menu sub_menu">
+                    <li><a href="postBoard.jsp?language=<%=language%>"><fmt:message key="mypage"/></a></li>
+                    <li><a href="signout.jsp?language=<%=language%>"><fmt:message key="signout"/></a></li>
+                </ul>
+                <%
+                } else {
+                %>
                 <a href="signin.jsp?language=<%=language%>" class="button-sign-in"><fmt:message key="signIn"/></a>
+                <%
+                    }
+                %>
             </nav>
         </div>
         <div class="head">
             <header>
                 <div main-header>
                     <img class="logo" src="resources/css/logo-left.png">
-                    <h1><a href="index.jsp?language=<%=language%>%>"><span><fmt:message
+                    <h1><a href="index.jsp?language=<%=language%>"><span><fmt:message
                             key="index"/></span></a></h1>
                     <img class="logo" src="resources/css/logo-right.png">
                 </div>
             </header>
         </div>
+        <%
+            if (!request.getRequestURI().contains("signin")) {
+        %>
         <div class="main-wrapper">
             <div class="description">
                 <h3><fmt:message key="description-1"/> <span><fmt:message key="index"/></span> <fmt:message
@@ -68,5 +87,8 @@
                 %>
             </div>
         </div>
+        <%
+            }
+        %>
     </div>
 </fmt:bundle>

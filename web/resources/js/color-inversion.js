@@ -19,8 +19,10 @@ function spin() {
                 $('.menu-icon').attr('src', 'resources/css/menu-icon-inversion.png');
                 $('.hide>li:not(:last-child)').css('border-bottom', '1px solid white');
                 $('.navigator').css('background-color','white');
-                $('.navigator a').css('color','sienna');
+                $('.navigator span').css('color','sienna');
                 $('.navigator li:not(:last-child)').css('border-right','4px solid sienna')
+                $('.language-selector label').css('color','sienna');
+
             }
         }, 20);
     }

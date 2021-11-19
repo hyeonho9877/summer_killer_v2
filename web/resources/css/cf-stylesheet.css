@@ -3,7 +3,7 @@
     overflow: hidden;
     margin: 100px auto;
     width: 100%;
-    height: 400px;
+    height: 60%;
 }
 
 .article > h1 {
@@ -16,119 +16,6 @@
 
 .article-head > h1 {
     font-size: 3em;
-}
-
-.sorry {
-    overflow: hidden;
-    margin: 20px auto;
-    height: 20%;
-    text-align: center;
-}
-
-.sorry > h1 {
-    animation-name: headAppear;
-    animation-duration: 3s;
-    font-size: 3.1em;
-}
-
-.sorry > p {
-    animation-name: pAppear;
-    animation-timing-function: ease-in-out;
-    animation-duration: 5s;
-    margin-top: 30px;
-    font-size: 1.3em;
-}
-
-@keyframes headAppear {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes pAppear {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.sub-head {
-    overflow: hidden;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 1.25em;
-}
-
-.sub-head > h1 {
-    animation-name: textAppear;
-    animation-duration: 1s;
-}
-
-.content-img {
-    margin: 20px auto;
-    display: block;
-}
-
-.brothers {
-    margin: 20px auto;
-}
-
-@keyframes textAppear {
-    0% {
-        position: relative;
-        bottom: 40px;
-    }
-    100% {
-        position: relative;
-        bottom: 0;
-    }
-}
-
-p {
-    font-size: 1.25em;
-}
-
-.introduction {
-    display: flex;
-    margin: 0 auto;
-    padding: 10px;
-    width: 100%;
-    height: 33%;
-    overflow: hidden;
-}
-
-.introduction-reverse {
-    display: flex;
-    flex-direction: row-reverse;
-    margin: 0 auto;
-    padding: 10px;
-    width: 100%;
-    height: 33%;
-    overflow: hidden;
-}
-
-.introduction-article {
-    margin: auto;
-    padding: 10px;
-    width: 60%;
-    height: 100%;
-}
-
-.summer-killer-img {
-    margin: 0 auto;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 100%;
-    height: 50%;
-    max-width: 1200px;
-    padding-bottom: 50%;
 }
 
 .slider-list {
@@ -226,7 +113,7 @@ p {
 }
 
 iframe {
-    margin-bottom: 60%;
+    margin: 30px auto;
     min-width: 430px;
 }
 

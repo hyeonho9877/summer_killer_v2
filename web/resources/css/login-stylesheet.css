@@ -10,6 +10,12 @@
     margin: 170px auto;
 }
 
+.err-msg{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: bold;
+    color: red;
+}
+
 .wrapper{
     width: 100%;
     background: #fff;
@@ -36,6 +42,7 @@
 }
 .wrapper form .row{
     height: 45px;
+    margin-top: 10px;
     margin-bottom: 15px;
     position: relative;
 }
@@ -103,4 +110,21 @@ form .button input:hover{
 }
 form .signup-link a:hover{
     text-decoration: underline;
+}
+
+.hidden-language {
+    display: none;
+}
+
+@media screen and (max-width: 1750px) {
+    .hidden-language {
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .hidden-language > a {
+        color: black;
+        text-decoration: none;
+    }
 }

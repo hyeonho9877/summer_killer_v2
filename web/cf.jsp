@@ -1,14 +1,18 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ include file="menu.jsp" %>
+<%@ page errorPage="errPage.jsp" %>
+<%@ include file="localeSetter.jsp" %>
 <fmt:setLocale value='<%=language%>'/>
 <fmt:bundle basename="bundle.cfBundle">
-    <html>
-    <head>
-        <title><fmt:message key="cf_title"/></title>
-        <link rel="stylesheet" href="resources/css/cf-stylesheet.css?after">
-        <script src="resources/js/script.js"></script>
+<html>
+<head>
+
+    <title><fmt:message key="cf_title"/></title>
+    <link rel="stylesheet" href="resources/css/cf-stylesheet.css?after">
+    <script src="resources/js/script.js"></script>
     </head>
     <body>
+    <jsp:include page="menu.jsp"/>
     <div class="article">
         <a href="#" id="hidden-prev"></a>
         <a href="#" id="hidden-next"></a>
@@ -39,7 +43,10 @@
         <a href="#" id="prev"></a>
         <a href="#" id="next"></a>
     </div>
-    <%@ include file="footer.jsp" %>
+    <div class="hidden-language">
+        <a href="<%=request.getRequestURI()%>?language=ko">한국어</a> | <a href="<%=request.getRequestURI()%>?language=en">English</a>
+    </div>
+    <jsp:include page="footer.jsp"/>
     </body>
     </html>
 </fmt:bundle>

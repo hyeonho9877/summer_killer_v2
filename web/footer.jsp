@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8" %>
+<%@ page errorPage="errPage.jsp" %>
+<%@ include file="localeSetter.jsp"%>
 <head>
     <link href="resources/css/footer-stylesheet.css" rel="stylesheet">
 </head>

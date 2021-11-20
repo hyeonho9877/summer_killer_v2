@@ -2,10 +2,11 @@ create table if not exists user
 (
     username     varchar(10) not null,
     password     varchar(20) not null,
-    address      varchar(30) not null,
+    address      varchar(50) not null,
     phone_number varchar(13) not null,
     gender       set ('M','F'),
     mileage      int default 0,
+    name varchar(30),
     primary key (username)
 ) default charset = utf8;
 

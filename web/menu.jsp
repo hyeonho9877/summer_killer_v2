@@ -1,24 +1,21 @@
-<%@ page contentType="text/html;charset=utf-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%
-    String language = request.getParameter("language");
-    if (language == null) {
-        language = "ko";
-    }
-%>
+<%@ page contentType="text/html;charset=utf-8" %>
+<%@ page errorPage="errPage.jsp" %>
+<%@ include file="localeSetter.jsp"%>
 <fmt:setLocale value='<%=language%>'/>
 <fmt:bundle basename="bundle.menuBundle">
     <head>
-        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
         <link href="resources/css/menu-stylesheet.css" rel="stylesheet">
-        <script src="resources/js/jquery-3.5.1.min.js"></script>
         <script src="resources/js/menu.js"></script>
         <script src="resources/js/mypage.js"></script>
     </head>
     <div class='hidden-menu'>
-        <a class="open"><img class='menu-icon' src="resources/css/menu-icon.png"></a>
+        <a class="open"><img class='menu-icon' src="resources/images/menu-icon.png"></a>
         <ul class="hide">
-            <li><a href="introduction.jsp?language=<%=language%>"><span><fmt:message key="index"/></span> <fmt:message
+            <li><a href="introduction.jsp?language=<%=language%>"><span class="span-title"><fmt:message key="index"/></span> <fmt:message
                     key="introduction"/>
             </a></li>
             <li><a href="history.jsp?language=<%=language%>"><fmt:message key="history"/></a></li>
@@ -46,8 +43,11 @@
                 <%
                     Boolean authorized = (Boolean) session.getAttribute("authorized");
                     if (authorized != null) {
+                        String username = (String) session.getAttribute("username");
+                        int index = username.indexOf("@");
+                        username = username.substring(0, index);
                 %>
-                <span class="button-my-page" onclick><%=session.getAttribute("username")%> &#9660;</span>
+                <span class="button-my-page" onclick><%=username%> &#9660;</span>
                 <ul class="trd_menu sub_menu">
                     <li><a href="postBoard.jsp?language=<%=language%>"><fmt:message key="mypage"/></a></li>
                     <li><a href="signout.jsp?language=<%=language%>"><fmt:message key="signout"/></a></li>
@@ -64,15 +64,15 @@
         <div class="head">
             <header>
                 <div main-header>
-                    <img class="logo" src="resources/css/logo-left.png">
+                    <img class="logo" src="resources/images/logo-left.png">
                     <h1><a href="index.jsp?language=<%=language%>"><span><fmt:message
                             key="index"/></span></a></h1>
-                    <img class="logo" src="resources/css/logo-right.png">
+                    <img class="logo" src="resources/images/logo-right.png">
                 </div>
             </header>
         </div>
         <%
-            if (!request.getRequestURI().contains("signin")) {
+            if (!(request.getRequestURI().contains("signin") || request.getRequestURI().contains("signup"))) {
         %>
         <div class="main-wrapper">
             <div class="description">

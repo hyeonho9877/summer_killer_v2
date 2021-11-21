@@ -8,6 +8,7 @@
 <head>
     <title><fmt:message key="history_title"/></title>
     <link rel="stylesheet" href="resources/css/stylesheet.css">
+    <script src="resources/js/jquery-3.5.1.min.js"></script>
     </head>
     <body>
     <jsp:include page="menu.jsp"/>

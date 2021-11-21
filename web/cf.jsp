@@ -10,6 +10,7 @@
     <title><fmt:message key="cf_title"/></title>
     <link rel="stylesheet" href="resources/css/cf-stylesheet.css?after">
     <script src="resources/js/script.js"></script>
+    <script src="resources/js/jquery-3.5.1.min.js"></script>
     </head>
     <body>
     <jsp:include page="menu.jsp"/>

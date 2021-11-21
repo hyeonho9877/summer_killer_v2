@@ -7,6 +7,7 @@
 <head>
     <title>빠삐코 :: 소비자 게시판</title>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="resources/js/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 <jsp:include page="menu.jsp"/>

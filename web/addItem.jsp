@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="resources/js/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 <jsp:include page="menu.jsp"/>

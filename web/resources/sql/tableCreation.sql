@@ -17,6 +17,9 @@ create table if not exists product
     price int         not null,
     stock int         not null,
     sales int         not null,
+    filepath varchar(20) not null,
+    description varchar(100) not null,
+    detailImage int not null,
     primary key (pid)
 ) default charset = utf8;
 

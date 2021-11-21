@@ -1,6 +1,5 @@
 package controller;
 
-import repository.DBConnector;
 import service.ValidateService;
 
 import javax.servlet.ServletException;
@@ -10,10 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Enumeration;
 
 @WebServlet("/validateID")
 public class ValidateController extends HttpServlet {

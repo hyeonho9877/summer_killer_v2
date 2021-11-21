@@ -1,7 +1,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=utf-8" %>
 <%@ page errorPage="errPage.jsp" %>
-<%@ include file="localeSetter.jsp"%>
+<%@ include file="localeSetter.jsp" %>
 <fmt:setLocale value='<%=language%>'/>
 <fmt:bundle basename="bundle.menuBundle">
     <head>
@@ -15,7 +15,8 @@
     <div class='hidden-menu'>
         <a class="open"><img class='menu-icon' src="resources/images/menu-icon.png"></a>
         <ul class="hide">
-            <li><a href="introduction.jsp?language=<%=language%>"><span class="span-title"><fmt:message key="index"/></span> <fmt:message
+            <li><a href="introduction.jsp?language=<%=language%>"><span class="span-title"><fmt:message
+                    key="index"/></span> <fmt:message
                     key="introduction"/>
             </a></li>
             <li><a href="history.jsp?language=<%=language%>"><fmt:message key="history"/></a></li>
@@ -61,6 +62,9 @@
                 %>
             </nav>
         </div>
+        <%
+            if (!request.getRequestURI().contains("productDetail")) {
+        %>
         <div class="head">
             <header>
                 <div main-header>
@@ -87,6 +91,9 @@
                 %>
             </div>
         </div>
+        <%
+            }
+        %>
         <%
             }
         %>

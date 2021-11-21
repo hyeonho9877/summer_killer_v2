@@ -6,9 +6,10 @@
 <fmt:bundle basename="bundle.signInBundle">
     <html>
     <head>
+        <title><fmt:message key="signIn-title"/></title>
         <link rel="stylesheet" href="resources/css/login-stylesheet.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-        <title><fmt:message key="signIn-title"/></title>
+        <script src="resources/js/jquery-3.5.1.min.js"></script>
     </head>
     <body>
     <div>

@@ -109,6 +109,10 @@ h1 > a {
     color: sienna;
 }
 
+.button-introduction:hover {
+    cursor: pointer;
+}
+
 ul {
     font-weight: bold;
     text-align: center;
@@ -162,7 +166,7 @@ nav .button-my-page {
     color: white;
 }
 
-.navigator .ul-1 li{
+.navigator .ul-1 > li{
     padding: 0 50px;
     display: inline-block;
     color: white;
@@ -177,7 +181,7 @@ nav .button-my-page {
     font-size: 1.6em;
     list-style-type: none;
 }
-.navigator .ul-1 li:not(:last-child){
+.navigator .ul-1 > li:not(:last-child){
     border-right: 4px solid white;
 }
 
@@ -224,6 +228,31 @@ h1 {
     border-bottom: 3px solid white;
 }
 
+.sub_menu-intro {
+    display: none;
+    position: absolute;
+    left: 30%;
+    top: 80px;
+    background-color: sienna;
+    border-radius: 10px;
+    padding:10px;
+}
+
+.sub_menu-intro a{
+    padding: 10px;
+    color: white;
+    font-size: 1.0em;
+}
+
+.sub_menu-intro li{
+    list-style: none;
+    display: block;
+}
+
+.sub_menu-intro li:not(:last-child){
+    border-bottom: 3px solid white;
+}
+
 @media screen and (max-width: 645px){
     .logo {
         display: none;
@@ -238,4 +267,19 @@ h1 {
     .menu-icon {
         display: unset;
     }
+}
+
+.display-block{
+    display: block;
+}
+
+.button-introduction{
+    border-right: 4px solid white;
+    padding: 0 50px;
+    font-size: 1.6em;
+    color: white;
+}
+
+.mw-60{
+    min-width: 60px;
 }

@@ -30,8 +30,11 @@
         <div class="navigator">
             <nav>
                 <ul class="ul-1">
-                    <li><a href="introduction.jsp?language=<%=language%>"><fmt:message key="introductionFull"/></a></li>
-                    <li><a href="history.jsp?language=<%=language%>"><fmt:message key="history"/></a></li>
+                    <span class="button-introduction"><fmt:message key="introductionFull"/></span>
+                    <ul class="trd_menu sub_menu-intro" style="display: none">
+                        <li><a class="display-block mw-60" href="introduction.jsp?language=<%=language%>"><fmt:message key="introduction"/></a></li>
+                        <li><a class="display-block mw-60" href="history.jsp?language=<%=language%>"><fmt:message key="history"/></a></li>
+                    </ul>
                     <li><a href="cf.jsp?language=<%=language%>"><fmt:message key="cf"/></a></li>
                 </ul>
                 <p class="nav-title"><a href="index.jsp?language=<%=language%>"><fmt:message
@@ -39,7 +42,6 @@
                 <ul class="ul-2">
                     <li><a href="shopping.jsp?language=<%=language%>"><fmt:message key="shopping"/></a></li>
                     <li><a href="gallery.jsp?language=<%=language%>"><fmt:message key="gallery"/></a></li>
-                    <li><a href="postBoard.jsp?language=<%=language%>"><fmt:message key="postBoard"/></a></li>
                 </ul>
                 <%
                     Boolean authorized = (Boolean) session.getAttribute("authorized");
@@ -48,7 +50,7 @@
                         int index = username.indexOf("@");
                         username = username.substring(0, index);
                 %>
-                <span class="button-my-page" onclick><%=username%> &#9660;</span>
+                <span class="button-my-page"><%=username%> &#9660;</span>
                 <ul class="trd_menu sub_menu">
                     <li><a href="cart.jsp?language=<%=language%>"><fmt:message key="cart"/></a></li>
                     <li><a href="postBoard.jsp?language=<%=language%>"><fmt:message key="mypage"/></a></li>

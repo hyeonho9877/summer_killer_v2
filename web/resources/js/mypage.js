@@ -7,4 +7,13 @@ $(document).ready(function () {
             myPage.slideDown();
         }
     });
+
+    $(".button-introduction").click(function () {
+        let intro = $(".sub_menu-intro");
+        if (intro.is(":visible")) {
+            intro.slideUp();
+        } else {
+            intro.slideDown();
+        }
+    });
 });

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".menu-icon").click(function () {
-        var submenu = $(".hide");
+        let submenu = $(".hide");
         if (submenu.is(":visible")) {
             submenu.slideUp();
         } else {

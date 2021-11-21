@@ -9,7 +9,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>summer_killer</web-resource-name>
-            <url-pattern>/addPost.jsp</url-pattern>
+            <url-pattern>/addCart.jsp</url-pattern>
         </web-resource-collection>
     </security-constraint>
     <security-constraint>
@@ -25,4 +25,8 @@
             <form-error-page>/signin.jsp</form-error-page>
         </form-login-config>
     </login-config>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/errPage.jsp</location>
+    </error-page>
 </web-app>

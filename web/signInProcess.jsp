@@ -1,5 +1,7 @@
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="repository.Product" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page errorPage="errPage.jsp" %>
 <html>
@@ -21,6 +23,7 @@
             String dbPassword = result.getString("password");
 
             if (password.equals(dbPassword)) {
+                session.setAttribute("cart", new ArrayList<Product>());
                 session.setAttribute("authorized", true);
                 session.setAttribute("username",username);
                 String language = request.getParameter("language");

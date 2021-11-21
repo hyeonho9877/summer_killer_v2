@@ -1,6 +1,8 @@
 package repository;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private int pid;
     private String name;
     private int price;
@@ -8,6 +10,7 @@ public class Product {
     private String filepath;
     private String description;
     private int detailImage;
+    private int qnt;
 
     public Product(int pid, String name, int price, int stock, String filepath, String description, int detailImage) {
         this.pid = pid;
@@ -17,6 +20,7 @@ public class Product {
         this.filepath = filepath;
         this.description = description;
         this.detailImage = detailImage;
+        qnt = 1;
     }
 
     public int getPid() {
@@ -73,5 +77,26 @@ public class Product {
 
     public void setDetailImage(int detailImage) {
         this.detailImage = detailImage;
+    }
+
+    public int getQnt() {
+        return qnt;
+    }
+
+    public void setQnt(int qnt) {
+        this.qnt = qnt;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "pid=" + pid +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", stock=" + stock +
+                ", filepath='" + filepath + '\'' +
+                ", description='" + description + '\'' +
+                ", detailImage=" + detailImage +
+                '}';
     }
 }

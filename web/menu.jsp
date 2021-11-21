@@ -50,6 +50,7 @@
                 %>
                 <span class="button-my-page" onclick><%=username%> &#9660;</span>
                 <ul class="trd_menu sub_menu">
+                    <li><a href="cart.jsp?language=<%=language%>"><fmt:message key="cart"/></a></li>
                     <li><a href="postBoard.jsp?language=<%=language%>"><fmt:message key="mypage"/></a></li>
                     <li><a href="signout.jsp?language=<%=language%>"><fmt:message key="signout"/></a></li>
                 </ul>
@@ -69,7 +70,7 @@
             <header>
                 <div main-header>
                     <img class="logo" src="resources/images/logo-left.png">
-                    <h1><a href="index.jsp?language=<%=language%>"><span><fmt:message
+                    <h1><a class="font-bold" href="index.jsp?language=<%=language%>"><span><fmt:message
                             key="index"/></span></a></h1>
                     <img class="logo" src="resources/images/logo-right.png">
                 </div>

@@ -11,7 +11,6 @@
     <script src="resources/js/jquery-3.5.1.min.js"></script>
     <script src="resources/js/jQueryRotateCompressed.js"></script>
     <script src="resources/js/color-inversion.js"></script>
-    <link rel="stylesheet" href="resources/css/menu-stylesheet.css">
     </head>
     <body>
     <jsp:include page="menu.jsp"/>

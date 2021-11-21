@@ -5,17 +5,32 @@
 <%@ include file="localeSetter.jsp" %>
 <%@ page errorPage="errPage.jsp" %>
 <fmt:setLocale value='<%=language%>'/>
-<html>
-<head>
-    <title>Title</title>
-    <script src="resources/js/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="resources/css/productDetail-stylesheet.css">
-</head>
-<body>
 <%
     ProductRepository repository = ProductRepository.getInstance();
     Product product = repository.getProductByPid(Integer.parseInt(request.getParameter("pid")));
 %>
+<html>
+<head>
+    <title><%=product.getName()%>
+    </title>
+    <script src="resources/js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="resources/css/productDetail-stylesheet.css">
+    <script>
+        function addToCart(id, authenticated) {
+            console.log(id, authenticated)
+            if (authenticated != null) {
+                if (confirm("상품을 장바구니에 추가하시겠습니까?")) {
+                    location.href = "addCart.jsp?pid=" + id
+                }
+            } else {
+                if (confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?")) {
+                    location.href = "signin.jsp"
+                }
+            }
+        }
+    </script>
+</head>
+<body>
 <jsp:include page="menu.jsp"/>
 <div class="container">
     <div class="detail-container">
@@ -30,9 +45,10 @@
             <p class="product-desc-detail font-1half" id="desc"><%=product.getDescription()%>
             </p>
             <p class="product-price font-3"><%=product.getPrice()%> 원</p>
-            <div>
-                <a href="#" class="btn btn-info display-block product-link" onclick="addToCart()"> 상품 주문 &raquo;</a>
-                <a href="#" class="btn btn-warning display-block product-link"> 장바구니 &raquo;</a>
+            <div class="margin-top-15">
+                <a href="#" class="btn btn-info display-block product-link"
+                   onclick="addToCart(<%=product.getPid()%>, <%=session.getAttribute("authorized")%>)"> 상품 주문
+                    &raquo;</a>
             </div>
         </div>
     </div>

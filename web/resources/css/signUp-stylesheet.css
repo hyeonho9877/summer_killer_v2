@@ -610,6 +610,10 @@ input {
     overflow: hidden;
 }
 
+.hidden-language{
+    display: none;
+}
+
 .select2-container--default .select2-results__option {
     padding-left: 22px;
 }

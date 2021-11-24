@@ -1,0 +1,52 @@
+.container{
+    text-align: start;
+    padding: 10px;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+.purchase-history-detail{
+    box-shadow: 0 0 20px 10px lightgrey;
+    margin: 50px;
+    padding: 20px;
+}
+
+.purchase-history-detail-title{
+    padding: 10px;
+}
+
+.purchase-history-detail{
+
+}
+
+.img-thumbnail{
+    max-width: 200px;
+    max-height: 200px;
+    padding: 10px;
+}
+
+.purchase-history-detail-name{
+    padding: 10px;
+}
+
+.purchase-history-detail-desc{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.font-1half{
+    font-size: 1.5em;
+}
+
+.font-2{
+    font-size: 2em;
+}
+
+.sub-title{
+    font-size: 0.6em;
+}

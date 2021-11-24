@@ -1,11 +1,6 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="repository.DBConnector" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
 <%
     DBConnector conn = null;
     try {
@@ -25,5 +20,3 @@
         response.sendRedirect("");
     }
 %>
-</body>
-</html>

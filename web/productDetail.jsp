@@ -5,6 +5,7 @@
 <%@ include file="localeSetter.jsp" %>
 <%@ page errorPage="errPage.jsp" %>
 <fmt:setLocale value='<%=language%>'/>
+<fmt:bundle basename="bundle.productDetailBundle">
 <%
     ProductRepository repository = ProductRepository.getInstance();
     Product product = repository.getProductByPid(Integer.parseInt(request.getParameter("pid")));
@@ -15,26 +16,14 @@
     </title>
     <script src="resources/js/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="resources/css/productDetail-stylesheet.css">
-    <script>
-        function addToCart(id, authenticated) {
-            console.log(id, authenticated)
-            if (authenticated != null) {
-                if (confirm("상품을 장바구니에 추가하시겠습니까?")) {
-                    location.href = "addCart.jsp?pid=" + id
-                }
-            } else {
-                if (confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?")) {
-                    location.href = "signin.jsp"
-                }
-            }
-        }
-    </script>
+    <script src="resources/js/order.js"></script>
+    <link rel="stylesheet" href="resources/css/review-stylesheet.css">
 </head>
 <body>
 <jsp:include page="menu.jsp"/>
 <div class="container">
     <div class="detail-container">
-        <h1 class="title  font-4">상품 정보</h1>
+        <h1 class="title  font-4"><fmt:message key="product-info"/></h1>
     </div>
     <div class="product-info display-inline-flex">
         <div class="product-img">
@@ -44,16 +33,20 @@
             <span class="product-name font-3" id="pname"><%=product.getName()%></span>
             <p class="product-desc-detail font-1half" id="desc"><%=product.getDescription()%>
             </p>
-            <p class="product-price font-3"><%=product.getPrice()%> 원</p>
+            <p class="product-price font-3"><%=product.getPrice()%> <fmt:message key="product-won"/></p>
+            <div class="order-qnt text-end p-20">
+                <label for="qnt" class="color-darkslategrey font-1half"><fmt:message key="product-qnt"/></label>
+                <input class="font-1half qnt-input" type="number" id="qnt" maxlength="1" max="10" min="1" value="1">
+            </div>
             <div class="margin-top-15">
                 <a href="#" class="btn btn-info display-block product-link"
-                   onclick="addToCart(<%=product.getPid()%>, <%=session.getAttribute("authorized")%>)"> 상품 주문
+                   onclick="addToCart(<%=product.getPid()%>, <%=session.getAttribute("authorized")%>)"> <fmt:message key="product-add"/>
                     &raquo;</a>
             </div>
         </div>
     </div>
     <div class="detail-container">
-        <h1 class="title  font-4">상세 이미지</h1>
+        <h1 class="title  font-4"><fmt:message key="product-images"/></h1>
         <div class="container">
             <%
                 for (int i = 1; i <= product.getDetailImage(); i++) {
@@ -66,46 +59,12 @@
         </div>
     </div>
 
-    <div class="product-review">
-        <div class="detail-container">
-            <h1 class="title  font-4">상품 리뷰</h1>
-        </div>
+    <div class="detail-container">
+        <h1 class="title  font-4"><fmt:message key="product-review"/></h1>
+        <jsp:include page="productReview.jsp"/>
     </div>
 </div>
-<%--<div class="jumbotron">--%>
-<%--    <div class="container">--%>
-<%--        <h1 class="display-3">상품 정보</h1>--%>
-<%--    </div>--%>
-<%--</div>--%>
-<%--<%--%>
-<%--    ProductRepository repository = ProductRepository.getInstance();--%>
-<%--    int pid = Integer.parseInt(request.getParameter("pid"));--%>
-<%--    Product product = repository.getProductByPid(pid);--%>
-<%--%>--%>
-<%--<div class="container">--%>
-<%--    <div class="row">--%>
-<%--        <div class="col-md-5">--%>
-<%--            <img src="/resources/images/<%=product.getFilepath()%>" style="width: 100%">--%>
-<%--        </div>--%>
-<%--        <div class="col-md-6">--%>
-<%--            <h3><%=product.getName()%>--%>
-<%--            </h3>--%>
-<%--            <p><%=product.getDescription()%>--%>
-<%--            </p>--%>
-<%--            <p><b>상품 코드 : </b><span class="badge badge-danger">--%>
-<%--                <%=product.getPid()%>--%>
-<%--            </span></p>--%>
-<%--            <h4><%=product.getPrice()%>원</h4>--%>
-<%--            <p>--%>
-<%--            <form name="addForm" action="./addCart.jsp?id=<%=product.getPid()%>" method="post">--%>
-<%--                <a href="#" class="btn btn-info" onclick="addToCart()"> 상품 주문 &raquo;</a>--%>
-<%--                <a href="./cart.jsp" class="btn btn-warning"> 장바구니 &raquo;</a>--%>
-<%--                <a href="./products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>--%>
-<%--            </form>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <hr>--%>
-<%--</div>--%>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>
+</fmt:bundle>

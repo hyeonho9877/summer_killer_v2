@@ -233,3 +233,11 @@ a:hover{
 h3{
     font-weight: 700;
 }
+
+a{
+    cursor: pointer;
+}
+
+.color-white{
+    color: white;
+}

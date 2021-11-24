@@ -40,6 +40,8 @@
         String language = request.getParameter("language");
         response.sendRedirect("errPage.jsp?errcode=500");
     }
+
+    conn.close();
 %>
 </body>
 </html>

@@ -53,7 +53,7 @@
                 <span class="button-my-page"><%=username%> &#9660;</span>
                 <ul class="trd_menu sub_menu">
                     <li><a href="cart.jsp?language=<%=language%>"><fmt:message key="cart"/></a></li>
-                    <li><a href="postBoard.jsp?language=<%=language%>"><fmt:message key="mypage"/></a></li>
+                    <li><a href="myPage.jsp?language=<%=language%>"><fmt:message key="mypage"/></a></li>
                     <li><a href="signout.jsp?language=<%=language%>"><fmt:message key="signout"/></a></li>
                 </ul>
                 <%
@@ -66,7 +66,7 @@
             </nav>
         </div>
         <%
-            if (!request.getRequestURI().contains("productDetail")) {
+            if (!(request.getRequestURI().contains("productDetail") || request.getRequestURI().contains("thankyou") || request.getRequestURI().contains("myPage"))) {
         %>
         <div class="head">
             <header>
@@ -79,7 +79,7 @@
             </header>
         </div>
         <%
-            if (!(request.getRequestURI().contains("signin") || request.getRequestURI().contains("signup"))) {
+            if (!(request.getRequestURI().contains("signin") || request.getRequestURI().contains("signup") || request.getRequestURI().contains("cart"))) {
         %>
         <div class="main-wrapper">
             <div class="description">

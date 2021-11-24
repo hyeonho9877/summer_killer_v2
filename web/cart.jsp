@@ -5,31 +5,27 @@
 <%@ include file="localeSetter.jsp" %>
 <%@ page errorPage="errPage.jsp" %>
 <fmt:setLocale value='<%=language%>'/>
+<fmt:bundle basename="bundle.cartBundle">
 <html>
 <head>
-    <title>Title</title>
+    <title><fmt:message key="cart-title"/></title>
+    <script src="resources/js/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/cart-stylesheet.css">
-    <script>
-        function confirmUser(){
-            event.preventDefault()
-            if(confirm("장바구니를 비우시겠습니까?")){
-                location.href="clearCart.jsp"
-            }
-        }
-    </script>
+    <script src="resources/js/cart.js"></script>
 </head>
 <body>
 <jsp:include page="menu.jsp"/>
 <div class="container">
     <div style="padding-top: 50px">
         <table class="table table-hover font-1half">
+            <tbody id="product-table">
             <tr>
-                <th>상품</th>
-                <th>가격</th>
-                <th>수량</th>
-                <th>소계</th>
-                <th>비고</th>
+                <th><fmt:message key="cart-product"/></th>
+                <th><fmt:message key="cart-price"/></th>
+                <th><fmt:message key="cart-qnt"/></th>
+                <th><fmt:message key="cart-sum"/></th>
+                <th><fmt:message key="cart-remark"/></th>
             </tr>
             <%
                 int sum = 0;
@@ -44,11 +40,14 @@
                 </td>
                 <td><%=product.getPrice()%>
                 </td>
-                <td><%=product.getQnt()%>
+                <td><input type="number" id="qnt-<%=product.getPid()%>" class="qnt" max="10" maxlength="1" min="1"
+                           value="<%=product.getQnt()%>"
+                           onchange="changePrice(<%=product.getPid()%>, <%=product.getPrice()%>)">
                 </td>
-                <td><%=total%>
+                <td id="item-<%=product.getPid()%>"><%=total%>
                 </td>
-                <td><a href="./removeItem.jsp?pid=<%=product.getPid()%>" class="badge badge-danger">삭제</a></td>
+                <td><a class="badge badge-danger" onclick="confirmDeleteItem(<%=product.getPid()%>)"
+                       style="color: white"><fmt:message key="cart-del"/></a></td>
             </tr>
             <%
                 }
@@ -56,20 +55,22 @@
             <tr>
                 <th></th>
                 <th></th>
-                <th>총액</th>
-                <th><%=sum%>
+                <th><fmt:message key="cart-total"/></th>
+                <th id="total-price"><%=sum%>
                 </th>
                 <th></th>
             </tr>
+            </tbody>
         </table>
         <div class="row btn-cart">
-            <a class="btn btn-danger" href="clearCart.jsp" onclick="confirmUser()">장바구니 비우기</a>
-            <a class="btn btn-info margin-0-1p" href="processOrder.jsp">주문하기</a>
+            <a class="btn btn-danger" href="clearCart.jsp" onclick="confirmDeleteCart()"><fmt:message key="cart-del-cart"/></a>
+            <a class="btn btn-info margin-0-1p" href="processOrder.jsp" onclick="confirmOrder()"><fmt:message key="cart-order"/></a>
         </div>
-        <a href="shopping.jsp" class="btn btn-secondary"> &laquo; 쇼핑 계속하기</a>
+        <a href="shopping.jsp" class="btn btn-secondary"> &laquo; <fmt:message key="cart-return"/></a>
     </div>
     <hr>
 </div>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>
+</fmt:bundle>

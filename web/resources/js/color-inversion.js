@@ -20,23 +20,19 @@ function spin() {
                 $('.hide>li:not(:last-child)').css('border-bottom', '1px solid white');
                 $('.navigator').css('background-color', 'white');
                 $('.navigator a').css('color', 'sienna');
-                $('.navigator .ul-1 li:not(:last-child)').css('border-right', '4px solid sienna')
-                $('.navigator .ul-2 li:not(:last-child)').css('border-right', '4px solid sienna')
+                $('.navigator .ul-1 > li:not(:last-child)').css('border-right', '4px solid sienna')
+                $('.navigator .ul-2 > li:not(:last-child)').css('border-right', '4px solid sienna')
                 $('.button-my-page').css('color', 'sienna')
                 $('.language-selector label').css('color', 'sienna');
                 $('.sub_menu').css('background-color', 'white');
                 $('.sub_menu a').css('color', 'sienna');
                 $('.sub_menu li:not(:last-child)').css('border-bottom', '3px solid sienna');
+                $('.sub_menu-intro').css('color','sienna')
+                $('.sub_menu-intro').css('background-color','white')
+                $('.sub_menu-intro li:not(:last-child)').css('border-bottom','3px solid sienna')
+                $('.button-introduction').css('color','sienna')
+                $('.button-introduction').css('border-right','4px solid sienna')
                 $('.button-sign-in').hover(
-                    function () {
-                        $(this).css('background-color', 'sienna');
-                        $(this).css('color', 'white');
-                    }, function(){
-                        $(this).css('background-color', 'white');
-                        $(this).css('color', 'sienna')
-                    });
-
-                $('').hover(
                     function () {
                         $(this).css('background-color', 'sienna');
                         $(this).css('color', 'white');

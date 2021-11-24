@@ -1,0 +1,30 @@
+* {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.span-err{
+    font-weight: 700;
+    padding: 15px;
+    display: block;
+    color: sienna;
+    margin: 0 25%;
+    font-size: 10em;
+}
+
+.err-title {
+    margin-top: 10%;
+}
+
+.err-desc {
+    font-size: 6em;
+    width: 40%;
+}
+
+.home-link{
+    font-weight: 700;
+    padding: 15px;
+    display: block;
+    color: sienna;
+    margin: 25px 25%;
+    font-size: 3em;
+}

@@ -20,99 +20,12 @@
             %>
             <div class='box'>
                 <div class='content'>
-                    <img src='resources/images/" + i + ".jpg'>
+                    <img src='resources/images/<%=i%>.jpg'>
                 </div>
             </div>
             <%
                 }
             %>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/1.jpg">--%>
-                <%--                </div>--%>
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/2.jpg">--%>
-                <%--                </div>--%>
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/3.jpg">--%>
-                <%--                </div>--%>
-
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/4.jpg">--%>
-                <%--                </div>--%>
-
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/5.jpg">--%>
-                <%--                </div>--%>
-
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/6.jpg">--%>
-                <%--                </div>--%>
-
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/7.jpg">--%>
-                <%--                </div>--%>
-
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/8.jpg">--%>
-                <%--                </div>--%>
-
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/9.jpg">--%>
-                <%--                </div>--%>
-
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/10.jpg">--%>
-                <%--                </div>--%>
-
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/11.jpg">--%>
-                <%--                </div>--%>
-
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/12.jpg">--%>
-                <%--                </div>--%>
-
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/13.jpg">--%>
-                <%--                </div>--%>
-
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/14.jpg">--%>
-                <%--                </div>--%>
-
-                <%--            </div>--%>
-                <%--            <div class="box">--%>
-                <%--                <div class="content">--%>
-                <%--                    <img src="resources/images/15.jpg">--%>
-                <%--                </div>--%>
-                <%--            </div>--%>
         </div>
     </div>
     <div class="hidden-language">

@@ -11,6 +11,10 @@ public class Product implements Serializable {
     private String description;
     private int detailImage;
     private int qnt;
+    private boolean received;
+    private String orderDate;
+    private boolean reviewed;
+    private int purchaseId;
 
     public Product(int pid, String name, int price, int stock, String filepath, String description, int detailImage) {
         this.pid = pid;
@@ -85,6 +89,38 @@ public class Product implements Serializable {
 
     public void setQnt(int qnt) {
         this.qnt = qnt;
+    }
+
+    public boolean isReceived() {
+        return received;
+    }
+
+    public void setReceived(boolean received) {
+        this.received = received;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public boolean isReviewed() {
+        return reviewed;
+    }
+
+    public void setReviewed(boolean reviewed) {
+        this.reviewed = reviewed;
+    }
+
+    public int getPurchaseId() {
+        return purchaseId;
+    }
+
+    public void setPurchaseId(int purchaseId) {
+        this.purchaseId = purchaseId;
     }
 
     @Override

@@ -7,7 +7,7 @@
     ArrayList<Product> cart = (ArrayList<Product>) session.getAttribute("cart");
     String username = (String) session.getAttribute("username");
 
-    String query = "insert into purchase (username, product_id, qnt, price) values(?,?,?,?)";
+    String query = "insert into purchase (username, product_id, qnt, price, received) values(?,?,?,?,?)";
     PreparedStatement pstmt = conn.prepareStatement(query);
 
     for (Product product : cart) {
@@ -15,6 +15,7 @@
         pstmt.setInt(2, product.getPid());
         pstmt.setInt(3, product.getQnt());
         pstmt.setInt(4, product.getQnt() * product.getPrice());
+        pstmt.setBoolean(5, false);
 
         pstmt.executeUpdate();
     }

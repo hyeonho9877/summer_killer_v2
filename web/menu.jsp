@@ -32,8 +32,10 @@
                 <ul class="ul-1">
                     <span class="button-introduction"><fmt:message key="introductionFull"/></span>
                     <ul class="trd_menu sub_menu-intro" style="display: none">
-                        <li><a class="display-block mw-60" href="introduction.jsp?language=<%=language%>"><fmt:message key="introduction"/></a></li>
-                        <li><a class="display-block mw-60" href="history.jsp?language=<%=language%>"><fmt:message key="history"/></a></li>
+                        <li><a class="display-block mw-60" href="introduction.jsp?language=<%=language%>"><fmt:message
+                                key="introduction"/></a></li>
+                        <li><a class="display-block mw-60" href="history.jsp?language=<%=language%>"><fmt:message
+                                key="history"/></a></li>
                     </ul>
                     <li><a href="cf.jsp?language=<%=language%>"><fmt:message key="cf"/></a></li>
                 </ul>
@@ -52,6 +54,14 @@
                 %>
                 <span class="button-my-page"><%=username%> &#9660;</span>
                 <ul class="trd_menu sub_menu">
+                    <%
+                        String role = (String) session.getAttribute("role");
+                        if (role.equals("admin")) {
+                    %>
+                    <li><a href="addItem.jsp?language=<%=language%>"><fmt:message key="addProduct"/></a></li>
+                    <%
+                        }
+                    %>
                     <li><a href="cart.jsp?language=<%=language%>"><fmt:message key="cart"/></a></li>
                     <li><a href="myPage.jsp?language=<%=language%>"><fmt:message key="mypage"/></a></li>
                     <li><a href="signout.jsp?language=<%=language%>"><fmt:message key="signout"/></a></li>
@@ -79,7 +89,7 @@
             </header>
         </div>
         <%
-            if (!(request.getRequestURI().contains("signin") || request.getRequestURI().contains("signup") || request.getRequestURI().contains("cart"))) {
+            if (!(request.getRequestURI().contains("signin") || request.getRequestURI().contains("signup") || request.getRequestURI().contains("cart") || request.getRequestURI().contains("addReview"))) {
         %>
         <div class="main-wrapper">
             <div class="description">

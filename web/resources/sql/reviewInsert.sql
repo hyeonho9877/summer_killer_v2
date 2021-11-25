@@ -4,3 +4,4 @@ insert into review (writer, product, title, text) VALUES ('udangyi@gmail.com',13
 alter table purchase add p_date date;
 
 select * from purchase where username='hyeonho9877@gmail.com' order by p_date desc;
+alter table review modify text varchar(200);

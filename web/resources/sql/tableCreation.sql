@@ -28,8 +28,8 @@ create table if not exists review
     rid     int         not null auto_increment,
     writer  varchar(30) not null,
     product int         not null,
-    title   varchar(20) not null,
-    text    varchar(100) not null,
+    title   varchar(30) not null,
+    text    varchar(200) not null,
     primary key (rid),
     foreign key (writer) references user (username),
     foreign key (product) references product (pid)

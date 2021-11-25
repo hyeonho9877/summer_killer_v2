@@ -21,12 +21,17 @@
 
         if (result.next()) {
             String dbPassword = result.getString("password");
+            String authority = result.getString("authority");
 
             if (password.equals(dbPassword)) {
                 session.setAttribute("cart", new ArrayList<Product>());
                 session.setAttribute("authorized", true);
                 session.setAttribute("username",username);
                 String language = request.getParameter("language");
+
+                if(authority.equals("admin"))
+                    session.setAttribute("role","admin");
+
                 response.sendRedirect("index.jsp?language=" + language);
             } else {
                 String language = request.getParameter("language");

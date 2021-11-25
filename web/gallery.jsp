@@ -20,7 +20,7 @@
             %>
             <div class='box'>
                 <div class='content'>
-                    <img src='resources/images/<%=i%>.jpg'>
+                    <img src='upload/<%=i%>.jpg'>
                 </div>
             </div>
             <%

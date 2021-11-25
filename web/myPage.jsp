@@ -78,7 +78,7 @@
                 %>
                 <div class="purchase-history-detail-desc">
                     <div class="purchase-history-detail-img">
-                        <img class="img-thumbnail" src="resources/images/<%=filepath%>">
+                        <img class="img-thumbnail" src="upload/<%=filepath%>">
                     </div>
                     <div class="purchase-history-detail-name font-1half">
                         <span><%=name%></span>

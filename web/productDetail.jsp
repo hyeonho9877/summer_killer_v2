@@ -27,7 +27,7 @@
     </div>
     <div class="product-info display-inline-flex">
         <div class="product-img">
-            <img class="img-thumbnail" src="resources/images/<%=product.getFilepath()%>">
+            <img class="img-thumbnail" src="upload/<%=product.getFilepath()%>">
         </div>
         <div class="product-desc">
             <span class="product-name font-3" id="pname"><%=product.getName()%></span>
@@ -52,7 +52,7 @@
                 for (int i = 1; i <= product.getDetailImage(); i++) {
 
             %>
-            <img src="resources/images/details/<%=product.getPid()%>/<%=i%>.jpg" class="detail-img">
+            <img src="upload/details/<%=product.getPid()%>/<%=i%>.jpg" class="detail-img">
             <%
                 }
             %>

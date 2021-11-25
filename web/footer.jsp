@@ -26,7 +26,7 @@
             String requestURL = queries.length > 1 ? url.substring(0, url.length()) : url.substring(0, url.length() - 1);
         %>
         <%
-            out.print("<label for=\"language-select\">언어 선택</label>");
+            out.print("<label for=\"language-select\" class=\"language-label\">언어 선택</label>");
             out.print("<select id=\"language-select\" onchange='location.href=\"" + requestURL + (queries.length > 1 ? "&" : "?") + "language=\"+this.value'>");
         %>
 

@@ -40,7 +40,7 @@
 %>
 <div class="container">
     <div class="product-info">
-        <img src="resources/images/<%=filepath%>" class="product-img">
+        <img src="upload/<%=filepath%>" class="product-img">
         <span class="product-name"><%=name%></span>
     </div>
     <div class="review-input">

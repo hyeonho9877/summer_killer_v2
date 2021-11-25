@@ -32,7 +32,7 @@
                 Product product = products.get(i);
         %>
         <div class="col-md-4" id="<%=product.getPid()%>" onclick="redirectToProduct(this.id)">
-            <img src="/resources/images/<%=product.getFilepath()%>" style="width: 100%">
+            <img src="/upload/<%=product.getFilepath()%>" style="width: 100%">
             <h3 class="product-title"><%=product.getName()%>
             </h3>
             <p class="product-desc"><%=product.getDescription()%>

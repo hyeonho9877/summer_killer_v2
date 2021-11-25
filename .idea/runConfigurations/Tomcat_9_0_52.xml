@@ -8,6 +8,11 @@
           <option name="CONTEXT_PATH" value="/" />
         </settings>
       </artifact>
+      <file path="$USER_HOME$/upload">
+        <settings>
+          <option name="CONTEXT_PATH" value="/upload" />
+        </settings>
+      </file>
     </deployment>
     <server-settings>
       <option name="BASE_DIRECTORY_NAME" value="930c33b8-5c13-404f-bacb-a66ccde75b5c" />

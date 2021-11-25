@@ -20,7 +20,7 @@
             <p><fmt:message key="index_sorry-p-1"/><br><fmt:message key="index_sorry-p-2"/></p>
         </div>
         <div class="main-image">
-            <img src="resources/images/summer-killer.jpg" id="image" onmouseover="spin()">
+            <img src="upload/summer-killer.jpg" id="image" onmouseover="spin()">
         </div>
         <div class="shoppingLink">
             <h1 id="pc"><fmt:message key="index_shoppingLink"/></h1>

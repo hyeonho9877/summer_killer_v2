@@ -17,18 +17,18 @@
             <h1><span><fmt:message key="history-span"/></span><fmt:message key="history-subhead"/></h1>
         </div>
         <div class="history-img">
-            <img class="content-img" src="resources/images/1981.png" alt="">
-            <img class="content-img" src="resources/images/1999.png" alt="">
-            <img class="content-img" src="resources/images/2005.png" alt="">
-            <img class="content-img" src="resources/images/2013.png" alt="">
+            <img class="content-img" src="upload/1981.png" alt="">
+            <img class="content-img" src="upload/1999.png" alt="">
+            <img class="content-img" src="upload/2005.png" alt="">
+            <img class="content-img" src="upload/2013.png" alt="">
         </div>
         <div class="sub-head">
             <h1><span><fmt:message key="history-span"/></span> <fmt:message key="history_brotherhood"/></h1>
         </div>
         <div class="brothers">
-            <img src="resources/images/milk.png" alt="">
-            <img src="resources/images/vanilla.png" alt="">
-            <img src="resources/images/pouch.png" alt="">
+            <img src="upload/milk.png" alt="">
+            <img src="upload/vanilla.png" alt="">
+            <img src="upload/pouch.png" alt="">
         </div>
     </div>
     <div class="hidden-language">

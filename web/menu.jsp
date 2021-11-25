@@ -13,7 +13,7 @@
         <script src="resources/js/mypage.js"></script>
     </head>
     <div class='hidden-menu'>
-        <a class="open"><img class='menu-icon' src="resources/images/menu-icon.png"></a>
+        <a class="open"><img class='menu-icon' src="upload/menu-icon.png"></a>
         <ul class="hide">
             <li><a href="introduction.jsp?language=<%=language%>"><span class="span-title"><fmt:message
                     key="index"/></span> <fmt:message
@@ -81,15 +81,17 @@
         <div class="head">
             <header>
                 <div main-header>
-                    <img class="logo" src="resources/images/logo-left.png">
+                    <img class="logo" src="upload/logo-left.png">
                     <h1><a class="font-bold" href="index.jsp?language=<%=language%>"><span><fmt:message
                             key="index"/></span></a></h1>
-                    <img class="logo" src="resources/images/logo-right.png">
+                    <img class="logo" src="upload/logo-right.png">
                 </div>
             </header>
         </div>
         <%
-            if (!(request.getRequestURI().contains("signin") || request.getRequestURI().contains("signup") || request.getRequestURI().contains("cart") || request.getRequestURI().contains("addReview"))) {
+            if (!(request.getRequestURI().contains("signin") || request.getRequestURI().contains("signup")
+                    || request.getRequestURI().contains("cart") || request.getRequestURI().contains("addReview")
+                    || request.getRequestURI().contains("addItem"))) {
         %>
         <div class="main-wrapper">
             <div class="description">

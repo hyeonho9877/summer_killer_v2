@@ -14,7 +14,7 @@
     <jsp:include page="menu.jsp"/>
     <div class="article">
         <div class="introduction">
-            <div><img class='icon' src="resources/images/lotte-food.png"></div>
+            <div><img class='icon' src="upload/lotte-food.png"></div>
             <div class="introduction-article">
                 <div class="article-head"><h1><fmt:message key="intro_article-title-1"/></h1></div>
                 <div>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="introduction-reverse">
-            <div><img class="icon" src="resources/images/summer-killer-icon.jpg"></div>
+            <div><img class="icon" src="upload/summer-killer-icon.jpg"></div>
             <div class="introduction-article">
                 <div class="article-head"><h1><fmt:message key="intro_article-title-2"/></h1></div>
                 <div>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="introduction">
-            <div><img class="icon" src="resources/images/goindol.gif" alt=""></div>
+            <div><img class="icon" src="upload/goindol.gif" alt=""></div>
             <div class="introduction-article">
                 <div class="article-head"><h1><fmt:message key="intro_article-title-3"/></h1></div>
                 <div>

@@ -23,17 +23,18 @@
    <img width="80%%" src="https://user-images.githubusercontent.com/47271188/143534868-3261bdf0-3220-4c33-aba5-6d455bc65bb7.png"/>
 
 
-2. ####IntelliJ 실행 후 Get from VCS 선택
+####2. IntelliJ 실행 후 Get from VCS 선택
 
    <img width="80%" src="https://user-images.githubusercontent.com/47271188/143536264-c1d24a1e-61c6-4d05-a67c-9c728891d59d.png"/>
-3. ####레포지토리 URL 복사 후 URL에 입력한 후 Clone 클릭
+
+####3. 레포지토리 URL 복사 후 URL에 입력한 후 Clone 클릭
 
    <img width="80%" src="https://user-images.githubusercontent.com/47271188/143536459-2b2c23c1-e006-4ea5-aa68-6dfc1eb69b66.png"/>
 
-4. ####File → Project Structure 클릭 후, Project SDK 확인, 13이 아니라면 드롭다운 바를 클릭후 Download JDK 선택
+####4. File → Project Structure 클릭 후, Project SDK 확인, 13이 아니라면 드롭다운 바를 클릭후 Download JDK 선택
 
     <img width="80%" src="https://user-images.githubusercontent.com/47271188/143536927-3e3e8940-a9e3-4cbe-8acd-e6b07e35da8e.png"/>
 
-5. ####JDK 13 선택후 Download
+####5. JDK 13 선택후 Download
 
    <img width="80%" src="https://user-images.githubusercontent.com/47271188/143537265-c3c819af-65a4-4590-9957-c966125d208c.png"/>

@@ -1,3 +1,6 @@
+create database if not exists summer_killer;
+use summer_killer;
+
 create table if not exists user
 (
     username     varchar(30) not null,

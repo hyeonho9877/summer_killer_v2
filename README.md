@@ -10,7 +10,7 @@
 + JDK : 13
 
 ## Requirements
-1. IntelliJ IDEA 2021.02 Ultimate (체험판 다운로드 가능)
+1. IntelliJ IDEA 2021.02 Ultimate (체험판 다운로드 가능, 상위 버전 가능)
 >https://www.jetbrains.com/ko-kr/idea/download/#section=windows
 2. MariaDB 10.5.13-GA
 >https://mariadb.com/downloads/

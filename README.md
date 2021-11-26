@@ -1,5 +1,7 @@
 # summer_killer_v2 - 지능웹설계
 
+오류가 발생하면 이메일로 메일 주세요!
+
 ## 실행환경
 
 + 운영체제 : 윈도우 10 Education 64bit
@@ -72,5 +74,40 @@
 13. summer_killer_v2:war exploded의 Application Context가 / 로 설정되어있는지 확인
    
    <img width="80%" src="https://user-images.githubusercontent.com/47271188/143546061-4c804b49-8a38-45cf-b3f1-cb64bb40e5bc.png"/>
+
+14. View → Tool Windows → Database 선택
+
+   <img width="80%" src="https://user-images.githubusercontent.com/47271188/143548245-087be325-f5fe-4860-95df-0f988657afd5.png"/>
+
+15. Database 창에서 해당 아이콘 클릭 후 MariaDB 데이터 소스 추가
+
+   <img width="80%" src="https://user-images.githubusercontent.com/47271188/143548330-3ca4d2b5-2a23-473c-bd24-7fa5a1a9750a.png"/>
+   <img width="80%" src="https://user-images.githubusercontent.com/47271188/143548453-b5a8402a-d0f8-4f18-951b-f91a3d4e018f.png">
+
+16. MariaDB Username과 Password 입력, 빨간 영역에 뜨는 Download 클릭 후 드라이버 다운로드
+
+   <img width="80%" src="https://user-images.githubusercontent.com/47271188/143548663-8a0aa3c4-46b8-4b8a-b2e8-b7af0bc85296.png">
+
+17. Test Connection이 정상적으로 이루어지면 연결 성공
+
+
+18. 좌측 탭의 프로젝트 탐색기에서 web/resources/sql 에 존재하는 tableCreation.sql 실행 (Ctrl + Enter)
+
+   <img width="80%" src="https://user-images.githubusercontent.com/47271188/143549292-a13fa306-e574-49b6-8a3c-a7c517009504.png">
+
+
+19. 마찬가지로 각 Insert.sql 실행
+
+20. dbConn.jsp 파일에 해당 부분을 자신의 Username과 Password로 변경
+
+   <img width="80%" src="https://user-images.githubusercontent.com/47271188/143549882-58905b24-b72d-49dc-9c95-e0f3d7c39446.png">
+
+22. 우측 상단의 Run을 통해 Tomcat 서버 실행
+
+   <img width="80%" src="https://user-images.githubusercontent.com/47271188/143549552-9069b7e2-babe-420e-8726-7f7d6bc63209.png">
+
+22. 완료
+
+   <img width="80%" src="https://user-images.githubusercontent.com/47271188/143550023-af14de2b-825e-4be2-8e5f-ae48756f24b5.png">
 
 

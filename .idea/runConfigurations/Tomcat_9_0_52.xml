@@ -8,7 +8,7 @@
           <option name="CONTEXT_PATH" value="/" />
         </settings>
       </artifact>
-      <file path="$USER_HOME$/upload">
+      <file path="$PROJECT_DIR$/upload">
         <settings>
           <option name="CONTEXT_PATH" value="/upload" />
         </settings>

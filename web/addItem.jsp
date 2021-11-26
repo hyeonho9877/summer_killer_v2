@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page errorPage="errPage.jsp" %>
 <%@ include file="localeSetter.jsp" %>
+<fmt:setLocale value='<%=language%>'/>
+<fmt:bundle basename="bundle.addItemBundle">
 <html>
 <head>
     <script src="resources/js/jquery-3.5.1.min.js"></script>
@@ -16,7 +19,7 @@
 
     <!-- Main CSS-->
     <link href="resources/css/signUp-stylesheet.css" rel="stylesheet" media="all">
-    <title>파일 업로드</title>
+    <title><fmt:message key="add-title"/></title>
     <style>
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
@@ -31,44 +34,48 @@
     <div class="wrapper wrapper--w680">
         <div class="card card-4">
             <div class="card-body">
-                <h2 class="title">상품 추가</h2>
-                <form method="POST" action="signUpProcess.jsp?language=<%=language%>" onsubmit="checkForm()">
+                <h2 class="title"><fmt:message key="add-form-title"/></h2>
+                <form method="POST" action="processAddItem.jsp" enctype="multipart/form-data">
                     <div class="input-group">
-                        <label class="label">상품 ID</label>
-                        <input class="input--style-4" placeholder="Place Holder" type="number" id="pid" required min="0" maxlength="3">
+                        <label class="label"><fmt:message key="add-productID"/></label>
+                        <fmt:message key="add-productID-placeHolder" var="pid_holder"/>
+                        <input class="input--style-4" placeholder="${pid_holder}" type="number" id="pid" name="pid" required min="0" maxlength="3">
                     </div>
                     <div class="input-group">
-                        <label class="label">상품 이름</label>
-                        <input class="input--style-4" placeholder="Place Holder" name="pname" type="text" id="pname" required maxlength="50">
+                        <label class="label"><fmt:message key="add-productName"/></label>
+                        <fmt:message key="add-productName-placeHolder" var="pname_holder"/>
+                        <input class="input--style-4" placeholder="${pname_holder}" name="pname" type="text" id="pname" required maxlength="50">
                     </div>
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">상품 가격</label>
+                                <label class="label"><fmt:message key="add-price"/></label>
                                 <input class="input--style-4" type="number" name="price" id="price" required min="0">
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">상품 재고 수</label>
+                                <label class="label"><fmt:message key="add-stock"/></label>
                                 <input class="input--style-4" type="number" name="stock" id="stock" required min="0">
                             </div>
                         </div>
                     </div>
                     <div class="input-group">
-                        <label class="label">상품 소개</label>
-                        <textarea style="width: 100%; min-height: 100px" class="input--style-4" placeholder="Place Holder" name="desc" id="desc" required maxlength="100"></textarea>
+                        <label class="label"><fmt:message key="add-desc"/></label>
+                        <fmt:message key="add-desc-placeHolder" var="desc_holder"/>
+                        <textarea style="width: 100%; min-height: 100px" class="input--style-4" placeholder="${desc_holder}" name="desc" id="desc" required maxlength="100"></textarea>
                     </div>
                     <div class="input-group">
-                        <label class="label">대표 이미지</label>
+                        <label class="label"><fmt:message key="add-productImage"/></label>
                         <input class="input--style-4" type="file" name="pIamge" id="address" required>
                     </div>
                     <div class="input-group">
-                        <label class="label">상세 이미지</label>
+                        <label class="label"><fmt:message key="add-detail"/></label>
                         <input class="input--style-4" type="file" name="detail" id="phone" multiple required>
                     </div>
                     <div class="p-t-15">
-                        <input class="btn btn--radius-2 btn-submit" type="submit" value="등록하기" id="btn-submit">
+                        <fmt:message key="add-submit" var="submit_loc"/>
+                        <input class="btn btn--radius-2 btn-submit" type="submit" value="${submit_loc}" id="btn-submit">
                     </div>
                 </form>
             </div>
@@ -84,3 +91,4 @@
 <jsp:include page="footer.jsp"/>
 </body>
 </html>
+</fmt:bundle>

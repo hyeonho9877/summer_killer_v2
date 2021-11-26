@@ -25,7 +25,8 @@ function confirmDeleteItem(pid){
 function confirmOrder(){
     event.preventDefault()
     if(confirm("위 내용대로 주문하시겠습니까?")){
-        location.href= "processOrder.jsp";
+        let language = document.getElementById('language-select').value;
+        location.href= "processOrder.jsp?language="+language;
     }
 }
 

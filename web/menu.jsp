@@ -23,7 +23,24 @@
             <li><a href="cf.jsp?language=<%=language%>"><fmt:message key="cf"/></a></li>
             <li><a href="gallery.jsp?language=<%=language%>"><fmt:message key="gallery"/></a></li>
             <li><a href="shopping.jsp?language=<%=language%>"><fmt:message key="shopping"/></a></li>
-            <li><a href="postBoard.jsp?language=<%=language%>"><fmt:message key="postBoard"/></a></li>
+            <%
+                Boolean authorized = (Boolean) session.getAttribute("authorized");
+                if (authorized != null) {
+                    String username = (String) session.getAttribute("username");
+                    int index = username.indexOf("@");
+                    username = username.substring(0, index);
+            %>
+            <li><a href="cart.jsp?language=<%=language%>"><fmt:message key="cart"/></a></li>
+            <li><a href="myPage.jsp?language=<%=language%>"><fmt:message key="mypage"/></a></li>
+            <li><a href="signout.jsp?language=<%=language%>"><fmt:message key="signout"/></a></li>
+        </ul>
+        <%
+        } else {
+        %>
+        <li><a href="signin.jsp?language=<%=language%>"><fmt:message key="signIn"/></a></li>
+        <%
+            }
+        %>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -46,7 +63,6 @@
                     <li><a href="gallery.jsp?language=<%=language%>"><fmt:message key="gallery"/></a></li>
                 </ul>
                 <%
-                    Boolean authorized = (Boolean) session.getAttribute("authorized");
                     if (authorized != null) {
                         String username = (String) session.getAttribute("username");
                         int index = username.indexOf("@");

@@ -37,10 +37,13 @@ public class ProductRepository {
         ArrayList<Product> products = new ArrayList<>();
 
         while (resultSet.next()) {
+            int stock = resultSet.getInt("stock");
+            if(stock == 0)
+                continue;
             int pid = resultSet.getInt("pid");
             String name = resultSet.getString("name");
             int price = resultSet.getInt("price");
-            int stock = resultSet.getInt("stock");
+
             String filepath = resultSet.getString("filepath");
             String description = resultSet.getString("description");
             int detailImage = resultSet.getInt("detailImage");
@@ -71,5 +74,18 @@ public class ProductRepository {
         Product product = new Product(pid, name, price, stock, filepath, description, detailImage);
 
         return product;
+    }
+
+    public int getProductStock(int pid) throws SQLException, ClassNotFoundException{
+        connector.establish();
+
+        String selectQuery = "select stock from product where pid = ?";
+        PreparedStatement selectPstmt = connector.prepareStatement(selectQuery);
+        selectPstmt.setInt(1, pid);
+
+        ResultSet resultSet = selectPstmt.executeQuery();
+        resultSet.next();
+
+        return resultSet.getInt("stock");
     }
 }

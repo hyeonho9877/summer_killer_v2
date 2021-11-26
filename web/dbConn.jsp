@@ -1,5 +1,6 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="repository.DBConnector" %>
+<%@ page errorPage="errPage.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     DBConnector conn = null;

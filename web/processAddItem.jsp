@@ -13,8 +13,7 @@
 <%@ include file="dbConn.jsp" %>
 <%
     request.setCharacterEncoding("utf-8");
-    String firstPath = "C:\\Users\\61906\\upload";
-    String secondPath = "C:\\Users\\61906\\upload";
+    String firstPath = "C:\\Users\\61906\\Documents\\GitHub\\summer_killer_v2\\upload";
 
     DiskFileUpload upload = new DiskFileUpload();
 

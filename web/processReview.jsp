@@ -11,8 +11,8 @@
     String text = request.getParameter("text");
     String username = (String) session.getAttribute("username");
 
-    String insertQuery = "insert into review (writer, product, title, text) values(?,?,?,?)";
-    String updateQuery = "update purchase set reviewed = true where pid=? and product_id=?";
+    String insertQuery = "insert into summer_killer.review (writer, product, title, text) values(?,?,?,?)";
+    String updateQuery = "update summer_killer.purchase set reviewed = true where pid=? and product_id=?";
 
     PreparedStatement insertPstmt = conn.prepareStatement(insertQuery);
     insertPstmt.setString(1, username);

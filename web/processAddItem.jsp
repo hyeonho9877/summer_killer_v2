@@ -19,7 +19,7 @@
 
     List<FileItem> items = upload.parseRequest(request);
 
-    String insertQuery = "insert into product (pid, name, price, stock, sales, filepath, description, detailImage) values (?,?,?,?,?,?,?,?)";
+    String insertQuery = "insert into summer_killer.product (pid, name, price, stock, sales, filepath, description, detailImage) values (?,?,?,?,?,?,?,?)";
     PreparedStatement insertPstmt = conn.prepareStatement(insertQuery);
     String name="", filepath="", description="";
     int pid = 0, price=0, stock=0, detailImage=1;

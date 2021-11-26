@@ -18,7 +18,7 @@
     String phone = request.getParameter("phone");
     String gender = request.getParameter("gender");
 
-    String query = "insert into user (username, password, address, phone_number, gender, name) values(?,?,?,?,?,?)";
+    String query = "insert into summer_killer.user (username, password, address, phone_number, gender, name, authority) values(?,?,?,?,?,?,?)";
     PreparedStatement pstmt = conn.prepareStatement(query);
     pstmt.setString(1, username);
     pstmt.setString(2, password);
@@ -26,11 +26,14 @@
     pstmt.setString(4, phone);
     pstmt.setString(5, gender);
     pstmt.setString(6, lastName + firstName);
+    pstmt.setString(7, "user");
 
     pstmt.executeUpdate();
 
     conn.close();
     pstmt.close();
+
+    response.sendRedirect("index.jsp");
 %>
 </body>
 </html>

@@ -4,11 +4,6 @@
 <%@ page import="repository.Product" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page errorPage="errPage.jsp" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
 <%@ include file="dbConn.jsp" %>
 <%
     String username = request.getParameter("username");
@@ -16,7 +11,7 @@
 
     try {
         Statement stmt = conn.createStatement();
-        String query = "select * from user where username='" + username + "'";
+        String query = "select * from summer_killer.user where username='" + username + "'";
         ResultSet result = stmt.executeQuery(query);
 
         if (result.next()) {
@@ -31,6 +26,7 @@
 
                 if(authority.equals("admin"))
                     session.setAttribute("role","admin");
+                else session.setAttribute("role","user");
 
                 response.sendRedirect("index.jsp?language=" + language);
             } else {
@@ -48,5 +44,3 @@
 
     conn.close();
 %>
-</body>
-</html>

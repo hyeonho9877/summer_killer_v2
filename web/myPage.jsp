@@ -26,7 +26,7 @@
             <%@ include file="dbConn.jsp" %>
             <%
                 String username = (String) session.getAttribute("username");
-                String query = "select * from purchase where username = ? and p_date >= DATE_ADD(NOW(), INTERVAL - 3 DAY) order by p_date desc";
+                String query = "select * from summer_killer.purchase where username = ? and p_date >= DATE_ADD(NOW(), INTERVAL - 3 DAY) order by p_date desc";
                 PreparedStatement pstmt = conn.prepareStatement(query);
                 pstmt.setString(1, username);
 

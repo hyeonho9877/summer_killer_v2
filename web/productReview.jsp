@@ -8,7 +8,7 @@
 %>
 <div class="detail-container">
     <%
-        String query = "select * from review where product= ?";
+        String query = "select * from summer_killer.review where product= ?";
         PreparedStatement pstmt = conn.prepareStatement(query);
         pstmt.setInt(1, pid);
         boolean thereIsReview = false;

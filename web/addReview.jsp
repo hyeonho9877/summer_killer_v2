@@ -14,7 +14,7 @@
 <%@ include file="dbConn.jsp" %>
 <%
     int pid = Integer.parseInt(request.getParameter("pid"));
-    String query = "select * from purchase where pid=?";
+    String query = "select * from summer_killer.purchase where pid=?";
     PreparedStatement pstmt = conn.prepareStatement(query);
     pstmt.setInt(1, pid);
 
@@ -24,7 +24,7 @@
     int product_id = resultSet.getInt("product_id");
     pstmt.close();
 
-    query = "select name, filepath from product where pid = ?";
+    query = "select name, filepath from summer_killer.product where pid = ?";
     PreparedStatement productPstmt = conn.prepareStatement(query);
     productPstmt.setInt(1, product_id);
 

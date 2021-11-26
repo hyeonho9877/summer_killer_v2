@@ -9,13 +9,13 @@
     ArrayList<Product> cart = (ArrayList<Product>) session.getAttribute("cart");
     String username = (String) session.getAttribute("username");
 
-    String query = "insert into purchase (username, product_id, qnt, price) values(?,?,?,?)";
+    String query = "insert into summer_killer.purchase (username, product_id, qnt, price) values(?,?,?,?)";
     PreparedStatement pstmt = conn.prepareStatement(query);
 
-    String selectQuery = "select stock from product where pid=?";
+    String selectQuery = "select stock from summer_killer.product where pid=?";
     PreparedStatement selectPstmt = conn.prepareStatement(selectQuery);
 
-    String updateQuery = "update product set stock = ? where pid=?";
+    String updateQuery = "update summer_killer.product set stock = ? where pid=?";
     PreparedStatement updatePstmt = conn.prepareStatement(updateQuery);
 
     for (Product product : cart) {

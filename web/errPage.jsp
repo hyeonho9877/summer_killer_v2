@@ -13,8 +13,6 @@
     <span class="span-err err-title">이런!!</span>
     <span class="span-err err-desc">오류가 발생했어요!</span>
     <a class="home-link" href="index.jsp">홈으로 &raquo;</a>
-    <p><%=exception.getLocalizedMessage()%></p>
-    <p><%exception.printStackTrace();%></p>
 </div>
 </body>
 </html>

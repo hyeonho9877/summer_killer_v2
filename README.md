@@ -102,6 +102,10 @@
 
    <img width="80%" src="https://user-images.githubusercontent.com/47271188/143549882-58905b24-b72d-49dc-9c95-e0f3d7c39446.png">
 
+21. processAddItem.jsp에서 firstPath 변수를 자신의 경로에 맞게 수정
+
+   <img width="80%" src="https://user-images.githubusercontent.com/47271188/143600526-ffdb3793-9843-47d2-b813-e6c4c5aea9bf.png">
+
 22. 우측 상단의 Run을 통해 Tomcat 서버 실행
 
    <img width="80%" src="https://user-images.githubusercontent.com/47271188/143549552-9069b7e2-babe-420e-8726-7f7d6bc63209.png">

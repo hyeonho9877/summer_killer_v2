@@ -12,10 +12,10 @@
     String query = "insert into summer_killer.purchase (username, product_id, qnt, price) values(?,?,?,?)";
     PreparedStatement pstmt = conn.prepareStatement(query);
 
-    String selectQuery = "select stock from summer_killer.product where pid=?";
+    String selectQuery = "select stock,sales from summer_killer.product where pid=?";
     PreparedStatement selectPstmt = conn.prepareStatement(selectQuery);
 
-    String updateQuery = "update summer_killer.product set stock = ? where pid=?";
+    String updateQuery = "update summer_killer.product set stock=?, sales=? where pid=?";
     PreparedStatement updatePstmt = conn.prepareStatement(updateQuery);
 
     for (Product product : cart) {
@@ -28,9 +28,11 @@
         ResultSet resultSet = selectPstmt.executeQuery();
         resultSet.next();
         int stock = resultSet.getInt("stock");
+        int sales = resultSet.getInt("sales");
 
         updatePstmt.setInt(1, stock-product.getQnt());
-        updatePstmt.setInt(2, product.getPid());
+        updatePstmt.setInt(2, sales+product.getQnt());
+        updatePstmt.setInt(3, product.getPid());
 
         updatePstmt.executeUpdate();
         pstmt.executeUpdate();

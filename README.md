@@ -10,6 +10,7 @@
 + apache tomcat : 9.0.54
 + 브라우저 : 크롬
 + JDK : 13
++ 포트 : 8120
 
 ## Requirements
 1. IntelliJ IDEA 2021.02 Ultimate (체험판 다운로드 가능, 상위 버전 가능)
